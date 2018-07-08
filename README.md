@@ -5,7 +5,7 @@ To see the example, which is the image color reduction, run clustering_example.p
 
 To use k-means algorithm in your code just call the function:
 
-kmeans(k, data, min_vals, max_vals, max_iter=50)
+<i>kmeans(k, data, min_vals, max_vals, max_iter=50)</i>
 
 with parameters:
 k - number of clusters
