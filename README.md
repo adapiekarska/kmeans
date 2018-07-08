@@ -8,11 +8,9 @@ To use k-means algorithm in your code just call the function:
 <i>kmeans(k, data, min_vals, max_vals, max_iter=50)</i>
 
 with parameters:
-k - number of clusters
-d - data set, should be ndarray of shape (n, d) where n is the number
-of data entries and d is the number of dimensions of each data entry
-min_vals, max_vals - array like lists that store min and max values
-for each dimension
+k - number of clusters,
+d - data set, should be ndarray of shape (n, d) where n is the number of data entries, and d is the number of dimensions of each data entry,
+min_vals, max_vals - array like lists that store min and max values for each dimension,
 max_iter - maximal number of iterations.
 
 kmeans(...) returns ndarray of shape (n, d) containing labels for
