@@ -50,6 +50,7 @@ def main():
     # prepare data set
     pix = list(im.getdata())
     data = np.array(pix)
+    im.close()
 
     # perform k-means
     # important: when reducing image palette, k-means
