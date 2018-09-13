@@ -13,7 +13,9 @@ This project contains two main files:
 
 ### Using kmeans module in your code
 
-To use k-means algorithm from module kmeans in your code just call the function:
+`kmeans.py` uses the numpy package, therefore you need to have it installed in your environment before running the module from your code or interpreter. 
+
+To run the k-means algorithm from this module in your code or intepreter session just call the function:
 
 ```
 kmeans(k, data, min_vals, max_vals, max_iter=50)
@@ -35,7 +37,7 @@ To see the example of clustering that utilizes kmeans module, run:
 clustering_example.py
 ```
 
-To run this example project, Python 3.6 is needed.
+To run this example project, Python 3.6 with numpy and PIL packages installed is needed.
 
 
 *Copyright 2018, Ada Piekarska, All rights reserved*
