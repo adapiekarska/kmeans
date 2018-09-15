@@ -1,8 +1,6 @@
 """
 To run k-means, just call the function:
-
 kmeans(k, data, min_vals, max_vals, max_iter=50)
-
 with parameters:
 k - number of clusters
 d - data set, should be ndarray of shape (n, d) where n is the number
@@ -10,11 +8,8 @@ of data entries and d is the number of dimensions of each data entry
 min_vals, max_vals - array like lists that store min and max values
 for each dimension
 max_iter - maximal number of iterations.
-
 kmeans(...) returns ndarray of shape (n, d) containing labels for
 every data entry.
-
-Copyright 2018, Ada Piekarska, All rights reserved
 """
 
 
@@ -22,17 +17,30 @@ from random import randint
 import numpy as np
 
 
+def data_preprocess(data):
+    """
+    Standarize the data set.
+    """
+
+    data = np.unique(data, axis=0)
+    means = np.mean(data, axis=0)
+    stds = np.std(data, axis=0)
+    for i in range(len(data)):
+        for dim in range(data.shape[1]):
+            data[i][dim] = (data[i][dim] - means[dim])/stds[dim]
+
+
 def kmeans(k, data, min_vals, max_vals, max_iter=50):
     """
     Perform k-means algorithm. k is the number of expected clusters.
     Expects data to be ndarray of shape (n, d), where n is the number
     of data points in the set and d is a number of dimensions.
-
     min_vals and max_vals are lists of min and max values for each
     dimension, therefore they should be array like of size d.
-
     Returns ndarray of shape (n, d) containing labels for each data point.
     """
+
+    data_preprocess(data)
 
     dimensions = data.shape[1]
     min_vals = list(min_vals)
@@ -142,4 +150,3 @@ def get_centroid_idx(centroids, c):
     """
 
     return centroids.tolist().index(c.tolist())
-
