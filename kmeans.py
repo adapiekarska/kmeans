@@ -17,19 +17,6 @@ from random import randint
 import numpy as np
 
 
-def data_preprocess(data):
-    """
-    Standarize the data set.
-    """
-
-    data = np.unique(data, axis=0)
-    means = np.mean(data, axis=0)
-    stds = np.std(data, axis=0)
-    for i in range(len(data)):
-        for dim in range(data.shape[1]):
-            data[i][dim] = (data[i][dim] - means[dim])/stds[dim]
-
-
 def kmeans(k, data, min_vals, max_vals, max_iter=50):
     """
     Perform k-means algorithm. k is the number of expected clusters.
@@ -40,7 +27,7 @@ def kmeans(k, data, min_vals, max_vals, max_iter=50):
     Returns ndarray of shape (n, d) containing labels for each data point.
     """
 
-    data_preprocess(data)
+    np.unique(data, axis=0)
 
     dimensions = data.shape[1]
     min_vals = list(min_vals)
